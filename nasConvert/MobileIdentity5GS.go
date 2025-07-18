@@ -227,6 +227,8 @@ func PeiToString(buf []byte) string {
 	}
 
 	// Validate TAC and SNR using the Luhn formula
+	logger.ConvertLog.Info("---digitstr: ", digitStr)
+	logger.ConvertLog.Info("---digitstr: ", digitStr[:14])
 	if !isValidLuhn(digitStr[:14]) {
 		logger.ConvertLog.Warnf("invalid TAC/SNR in %s: %s", prefix, digitStr[:14])
 		return ""
